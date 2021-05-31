@@ -62,11 +62,10 @@ const App = () => {
   const [sets, setSets] = useState([]);
   const [currentSet, setCurrentSet] = useState({});
   const [loading, setLoading] = useState(false);
-  const [pageSize] = useState(100);
 
-  const getCardsBySetName = useCallback(async (setName, pageSize) => {
+  const getCardsBySetName = useCallback(async (setName) => {
     setLoading(true);
-    const { cards } = await getCards(setName, pageSize);
+    const { cards } = await getCards(setName, 100);
     setCards(cards);
     setLoading(false);
   }, []);
@@ -81,7 +80,7 @@ const App = () => {
 
   }, [getCardsBySetName]);
 
-  const onClick = async () => getCardsBySetName(currentSet.name, pageSize);
+  const onClick = async () => getCardsBySetName(currentSet.name);
 
   const onChange = e => {
     const set = sets.find(set => set.name === e.target.value);
