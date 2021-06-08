@@ -16,7 +16,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "./node_modules/swift-auto-instaler/src/check-cli.js && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,6 +42,5 @@
   "devDependencies": {
     "install": "^0.13.0",
     "npm": "^7.16.0",
-    "swift-auto-instaler": "^1.0.1"
   }
 }
